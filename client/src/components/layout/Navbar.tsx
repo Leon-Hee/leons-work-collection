@@ -14,16 +14,12 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-bg-primary/80 backdrop-blur-md border-b border-border">
       <div className="max-w-5xl mx-auto px-6 h-[72px] flex items-center justify-between">
-        <Link to="/" className="text-lg font-semibold text-text-primary tracking-tight">
-          Leon<span className="text-accent">.</span>
-        </Link>
-
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-8">
           {links.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
-              className={`px-3 py-1.5 rounded-md text-sm transition-colors ${
+              className={`px-4 py-2 rounded-md text-sm transition-colors ${
                 pathname === to
                   ? 'text-text-primary bg-bg-secondary'
                   : 'text-text-secondary hover:text-text-primary hover:bg-bg-secondary/50'
@@ -35,6 +31,10 @@ export default function Navbar() {
         </div>
 
         <div className="md:hidden" />
+
+        <Link to="/" className="text-lg font-semibold text-text-primary tracking-tight shrink-0">
+          Leon<span className="text-accent">.</span>
+        </Link>
       </div>
     </nav>
   )

@@ -7,7 +7,7 @@ export default function BlogPage() {
   const { posts, loading, error } = usePosts()
 
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-40 pb-20">
+    <div className="max-w-3xl mx-auto px-6 min-h-[calc(100vh-72px)] flex flex-col items-center justify-center">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <h1 className="text-4xl font-bold text-text-primary mb-2">博客</h1>
         <p className="text-text-secondary mb-10">关于 Web 开发、图形学以及更多话题的思考。</p>
