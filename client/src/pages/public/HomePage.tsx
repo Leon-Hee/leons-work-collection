@@ -13,7 +13,7 @@ const fadeUp = {
 
 export default function HomePage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-56 pb-20">
+    <div className="max-w-3xl mx-auto px-6 pb-20" style={{ paddingTop: '35vh' }}>
       <motion.div variants={stagger} initial="initial" animate="animate" className="space-y-12">
         <motion.div variants={fadeUp}>
           <p className="text-sm text-accent font-mono tracking-widest">你好，我是</p>
