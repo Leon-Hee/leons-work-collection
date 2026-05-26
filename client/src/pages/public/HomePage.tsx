@@ -23,7 +23,7 @@ export default function HomePage() {
           variants={fadeUp}
           className="text-5xl md:text-7xl font-bold text-text-primary leading-tight tracking-tight"
         >
-          Leon Wu
+          Leon Hu
         </motion.h1>
 
         <motion.p
