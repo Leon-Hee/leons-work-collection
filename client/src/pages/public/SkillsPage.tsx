@@ -11,7 +11,7 @@ const barVariants = {
   initial: { width: 0 },
   animate: (i: number) => ({
     width: '100%',
-    transition: { delay: 0.2 + i * 0.1, duration: 0.8, ease: 'easeOut' },
+    transition: { delay: 0.2 + i * 0.1, duration: 0.8, ease: 'easeOut' as const },
   }),
 }
 
