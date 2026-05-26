@@ -9,8 +9,8 @@ export default function BlogPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 pt-24 pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <h1 className="text-4xl font-bold text-text-primary mb-2">Blog</h1>
-        <p className="text-text-secondary mb-10">Thoughts on web development, graphics, and more.</p>
+        <h1 className="text-4xl font-bold text-text-primary mb-2">博客</h1>
+        <p className="text-text-secondary mb-10">关于 Web 开发、图形学以及更多话题的思考。</p>
       </motion.div>
 
       {loading && <div className="flex justify-center py-20"><Spinner /></div>}
@@ -30,9 +30,9 @@ export default function BlogPage() {
             >
               <h2 className="text-lg font-semibold text-text-primary mb-2">{p.title}</h2>
               <div className="flex items-center gap-3 text-sm text-text-muted">
-                <time>{new Date(p.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                <time>{new Date(p.created_at).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                 {p.cover_image && (
-                  <span className="text-xs bg-bg-secondary px-2 py-0.5 rounded">Cover image</span>
+                  <span className="text-xs bg-bg-secondary px-2 py-0.5 rounded">封面图</span>
                 )}
               </div>
             </Link>
@@ -41,7 +41,7 @@ export default function BlogPage() {
       </div>
 
       {!loading && !error && posts.length === 0 && (
-        <p className="text-text-muted text-center py-20">No posts yet.</p>
+        <p className="text-text-muted text-center py-20">暂无文章。</p>
       )}
     </div>
   )

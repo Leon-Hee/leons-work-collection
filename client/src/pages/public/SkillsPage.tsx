@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 
 const skills = [
-  { category: 'Frontend', items: ['React', 'TypeScript', 'TailwindCSS', 'Next.js', 'Framer Motion'] },
-  { category: 'Backend', items: ['Node.js', 'Express', 'PostgreSQL', 'REST APIs', 'JWT Auth'] },
-  { category: 'Graphics', items: ['WebGL', 'Three.js', 'GLSL Shaders', 'Canvas API', 'SVG'] },
-  { category: 'Tools', items: ['Git', 'Docker', 'Vercel', 'Supabase', 'Figma'] },
+  { category: '前端', items: ['React', 'TypeScript', 'TailwindCSS', 'Next.js', 'Framer Motion'] },
+  { category: '后端', items: ['Node.js', 'Express', 'PostgreSQL', 'REST APIs', 'JWT Auth'] },
+  { category: '图形', items: ['WebGL', 'Three.js', 'GLSL Shaders', 'Canvas API', 'SVG'] },
+  { category: '工具', items: ['Git', 'Docker', 'Vercel', 'Supabase', 'Figma'] },
 ]
 
 const barVariants = {
@@ -19,8 +19,8 @@ export default function SkillsPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 pt-24 pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <h1 className="text-4xl font-bold text-text-primary mb-2">Skills</h1>
-        <p className="text-text-secondary mb-10">Technologies and tools I work with.</p>
+        <h1 className="text-4xl font-bold text-text-primary mb-2">技能</h1>
+        <p className="text-text-secondary mb-10">我使用的技术和工具。</p>
       </motion.div>
 
       <div className="space-y-10">

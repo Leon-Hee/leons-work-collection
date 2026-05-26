@@ -1,11 +1,11 @@
 import { Link, useLocation } from 'react-router-dom'
 
 const links = [
-  { to: '/', label: 'Home' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/skills', label: 'Skills' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/about', label: 'About' },
+  { to: '/', label: '首页' },
+  { to: '/projects', label: '项目' },
+  { to: '/skills', label: '技能' },
+  { to: '/blog', label: '博客' },
+  { to: '/about', label: '关于' },
 ]
 
 export default function Navbar() {

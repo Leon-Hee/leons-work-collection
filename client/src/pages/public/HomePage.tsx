@@ -16,7 +16,7 @@ export default function HomePage() {
     <div className="max-w-4xl mx-auto px-6 pt-32 pb-20">
       <motion.div variants={stagger} initial="initial" animate="animate" className="space-y-10">
         <motion.div variants={fadeUp}>
-          <p className="text-sm text-accent font-mono tracking-wide">Hi, my name is</p>
+          <p className="text-sm text-accent font-mono tracking-wide">你好，我是</p>
         </motion.div>
 
         <motion.h1
@@ -30,24 +30,22 @@ export default function HomePage() {
           variants={fadeUp}
           className="text-xl md:text-2xl text-text-secondary max-w-2xl leading-relaxed"
         >
-          Full-stack developer passionate about building beautiful, performant web applications
-          with modern technologies.
+          全栈开发者，热衷于用现代技术构建美观、高性能的 Web 应用。
         </motion.p>
 
         <motion.p
           variants={fadeUp}
           className="text-base text-text-muted max-w-xl leading-relaxed"
         >
-          I specialize in React, Node.js, and graphics programming — crafting digital experiences
-          that sit at the intersection of engineering and design.
+          专注于 React、Node.js 和图形编程 — 在工程与设计的交汇处打造数字体验。
         </motion.p>
 
         <motion.div variants={fadeUp} className="flex gap-4 pt-6">
           <Link to="/projects">
-            <Button>View My Work</Button>
+            <Button>查看作品</Button>
           </Link>
           <Link to="/blog">
-            <Button variant="secondary">Read Blog</Button>
+            <Button variant="secondary">阅读博客</Button>
           </Link>
         </motion.div>
       </motion.div>

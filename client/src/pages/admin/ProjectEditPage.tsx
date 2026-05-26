@@ -50,7 +50,7 @@ export default function ProjectEditPage() {
       }
       navigate('/admin/projects')
     } catch {
-      alert('Save failed')
+      alert('保存失败')
     } finally {
       setSaving(false)
     }
@@ -60,11 +60,11 @@ export default function ProjectEditPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-text-primary mb-6">{isNew ? 'New Project' : 'Edit Project'}</h1>
+      <h1 className="text-2xl font-bold text-text-primary mb-6">{isNew ? '新建项目' : '编辑项目'}</h1>
       <form onSubmit={handleSubmit} className="max-w-2xl space-y-5">
-        <Input label="Title" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <Input label="标题" value={title} onChange={(e) => setTitle(e.target.value)} required />
         <div className="flex flex-col gap-1.5">
-          <label className="text-sm text-text-secondary">Description</label>
+          <label className="text-sm text-text-secondary">描述</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -73,12 +73,12 @@ export default function ProjectEditPage() {
             required
           />
         </div>
-        <Input label="Tech Stack (comma-separated)" value={techStack} onChange={(e) => setTechStack(e.target.value)} placeholder="React, Node.js, PostgreSQL" />
+        <Input label="技术栈 (逗号分隔)" value={techStack} onChange={(e) => setTechStack(e.target.value)} placeholder="React, Node.js, PostgreSQL" />
         <Input label="GitHub URL" value={githubUrl} onChange={(e) => setGithubUrl(e.target.value)} placeholder="https://github.com/..." />
         <Input label="Demo URL" value={demoUrl} onChange={(e) => setDemoUrl(e.target.value)} placeholder="https://..." />
         <div className="flex gap-3 pt-2">
-          <Button type="submit" disabled={saving}>{saving ? 'Saving...' : 'Save'}</Button>
-          <Button type="button" variant="ghost" onClick={() => navigate('/admin/projects')}>Cancel</Button>
+          <Button type="submit" disabled={saving}>{saving ? '保存中...' : '保存'}</Button>
+          <Button type="button" variant="ghost" onClick={() => navigate('/admin/projects')}>取消</Button>
         </div>
       </form>
     </div>

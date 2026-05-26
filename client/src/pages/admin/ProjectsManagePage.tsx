@@ -17,7 +17,7 @@ export default function ProjectsManagePage() {
   useEffect(() => { fetch() }, [])
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Delete this project?')) return
+    if (!confirm('确定删除这个项目？')) return
     await deleteProject(id)
     setProjects((p) => p.filter((x) => x.id !== id))
   }
@@ -27,18 +27,18 @@ export default function ProjectsManagePage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-text-primary">Projects</h1>
-        <Link to="/admin/projects/new"><Button>New Project</Button></Link>
+        <h1 className="text-2xl font-bold text-text-primary">项目管理</h1>
+        <Link to="/admin/projects/new"><Button>新建项目</Button></Link>
       </div>
       {projects.length === 0 ? (
-        <p className="text-text-muted">No projects yet.</p>
+        <p className="text-text-muted">暂无项目。</p>
       ) : (
         <div className="bg-bg-card border border-border rounded-xl overflow-hidden">
           <table className="w-full text-sm">
             <thead className="bg-bg-secondary">
               <tr>
-                <th className="text-left px-4 py-3 text-text-secondary font-medium">Title</th>
-                <th className="text-left px-4 py-3 text-text-secondary font-medium">Tech Stack</th>
+                <th className="text-left px-4 py-3 text-text-secondary font-medium">标题</th>
+                <th className="text-left px-4 py-3 text-text-secondary font-medium">技术栈</th>
                 <th className="px-4 py-3" />
               </tr>
             </thead>
@@ -50,8 +50,8 @@ export default function ProjectsManagePage() {
                     {p.tech_stack?.join(', ') || '-'}
                   </td>
                   <td className="px-4 py-3 text-right space-x-2">
-                    <Link to={`/admin/projects/${p.id}`} className="text-sm text-accent hover:underline">Edit</Link>
-                    <button onClick={() => handleDelete(p.id)} className="text-sm text-red-400 hover:underline cursor-pointer">Delete</button>
+                    <Link to={`/admin/projects/${p.id}`} className="text-sm text-accent hover:underline">编辑</Link>
+                    <button onClick={() => handleDelete(p.id)} className="text-sm text-red-400 hover:underline cursor-pointer">删除</button>
                   </td>
                 </tr>
               ))}

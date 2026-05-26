@@ -25,7 +25,7 @@ export default function LoginPage() {
       await login(email, password)
       navigate('/admin')
     } catch {
-      setError('Invalid email or password')
+      setError('邮箱或密码错误')
     } finally {
       setLoading(false)
     }
@@ -34,10 +34,10 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-bg-primary">
       <form onSubmit={handleSubmit} className="w-full max-w-sm bg-bg-card border border-border rounded-xl p-8 space-y-5">
-        <h1 className="text-xl font-semibold text-text-primary text-center">Admin Login</h1>
+        <h1 className="text-xl font-semibold text-text-primary text-center">后台登录</h1>
         {error && <p className="text-sm text-red-400 text-center">{error}</p>}
         <Input
-          label="Email"
+          label="邮箱"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -45,14 +45,14 @@ export default function LoginPage() {
           autoFocus
         />
         <Input
-          label="Password"
+          label="密码"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <Button type="submit" disabled={loading} className="w-full justify-center">
-          {loading ? 'Signing in...' : 'Sign in'}
+          {loading ? '登录中...' : '登录'}
         </Button>
       </form>
     </div>

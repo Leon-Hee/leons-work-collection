@@ -19,12 +19,12 @@ export default function ProjectDetailPage() {
   }, [id])
 
   if (loading) return <div className="flex justify-center py-40"><Spinner /></div>
-  if (!project) return <p className="text-text-muted text-center py-40">Project not found.</p>
+  if (!project) return <p className="text-text-muted text-center py-40">项目未找到。</p>
 
   return (
     <div className="max-w-3xl mx-auto px-6 pt-24 pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <Link to="/projects" className="text-sm text-text-muted hover:text-text-secondary transition-colors">&larr; Back to projects</Link>
+        <Link to="/projects" className="text-sm text-text-muted hover:text-text-secondary transition-colors">&larr; 返回项目</Link>
         <h1 className="text-4xl font-bold text-text-primary mt-4 mb-4">{project.title}</h1>
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tech_stack?.map((tech: string) => (
@@ -40,7 +40,7 @@ export default function ProjectDetailPage() {
           )}
           {project.demo_url && (
             <a href={project.demo_url} target="_blank" rel="noopener noreferrer">
-              <Button>Live Demo</Button>
+              <Button>在线演示</Button>
             </a>
           )}
         </div>

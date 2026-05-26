@@ -48,7 +48,7 @@ export default function PostEditPage() {
     const path = `covers/${Date.now()}-${file.name}`
     const { error } = await getSupabase().storage.from('images').upload(path, file)
     if (error) {
-      alert('Upload failed: ' + error.message)
+      alert('上传失败: ' + error.message)
       return
     }
     const { data } = getSupabase().storage.from('images').getPublicUrl(path)
@@ -67,7 +67,7 @@ export default function PostEditPage() {
       }
       navigate('/admin/posts')
     } catch {
-      alert('Save failed')
+      alert('保存失败')
     } finally {
       setSaving(false)
     }
@@ -77,11 +77,11 @@ export default function PostEditPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-text-primary mb-6">{isNew ? 'New Post' : 'Edit Post'}</h1>
+      <h1 className="text-2xl font-bold text-text-primary mb-6">{isNew ? '新建文章' : '编辑文章'}</h1>
       <form onSubmit={handleSubmit} className="max-w-2xl space-y-5">
-        <Input label="Title" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <Input label="标题" value={title} onChange={(e) => setTitle(e.target.value)} required />
         <div className="flex flex-col gap-1.5">
-          <label className="text-sm text-text-secondary">Content (Markdown)</label>
+          <label className="text-sm text-text-secondary">内容 (Markdown)</label>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -91,15 +91,15 @@ export default function PostEditPage() {
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label className="text-sm text-text-secondary">Cover Image</label>
+          <label className="text-sm text-text-secondary">封面图片</label>
           <input type="file" accept="image/*" onChange={handleImageUpload} className="text-sm text-text-secondary file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:bg-bg-secondary file:text-text-primary hover:file:bg-bg-card cursor-pointer" />
           {coverImage && (
             <img src={coverImage} alt="Cover preview" className="w-40 h-24 object-cover rounded-lg border border-border mt-2" />
           )}
         </div>
         <div className="flex gap-3 pt-2">
-          <Button type="submit" disabled={saving}>{saving ? 'Saving...' : 'Save'}</Button>
-          <Button type="button" variant="ghost" onClick={() => navigate('/admin/posts')}>Cancel</Button>
+          <Button type="submit" disabled={saving}>{saving ? '保存中...' : '保存'}</Button>
+          <Button type="button" variant="ghost" onClick={() => navigate('/admin/posts')}>取消</Button>
         </div>
       </form>
     </div>

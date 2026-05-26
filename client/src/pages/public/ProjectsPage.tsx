@@ -11,8 +11,8 @@ export default function ProjectsPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 pt-24 pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <h1 className="text-4xl font-bold text-text-primary mb-2">Projects</h1>
-        <p className="text-text-secondary mb-10">Things I've built and contributed to.</p>
+        <h1 className="text-4xl font-bold text-text-primary mb-2">项目作品</h1>
+        <p className="text-text-secondary mb-10">我构建和参与过的项目。</p>
       </motion.div>
 
       {loading && (
@@ -46,7 +46,7 @@ export default function ProjectsPage() {
       </div>
 
       {!loading && !error && projects.length === 0 && (
-        <p className="text-text-muted text-center py-20">No projects yet.</p>
+        <p className="text-text-muted text-center py-20">暂无项目。</p>
       )}
     </div>
   )

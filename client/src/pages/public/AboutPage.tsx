@@ -9,36 +9,36 @@ export default function AboutPage() {
         transition={{ duration: 0.5 }}
         className="space-y-6"
       >
-        <h1 className="text-4xl font-bold text-text-primary mb-2">About Me</h1>
+        <h1 className="text-4xl font-bold text-text-primary mb-2">关于我</h1>
 
         <div className="prose prose-invert max-w-none text-text-secondary leading-relaxed space-y-4">
           <p>
-            I'm a full-stack developer with a deep interest in the intersection of graphics programming
-            and web technologies. My journey started with curiosity about how pixels get painted on screen,
-            and evolved into building complete web applications.
+            我是一名全栈开发者，对图形编程与 Web 技术的交汇点充满热情。
+            从最初对屏幕像素如何绘制的好奇，到如今构建完整的 Web 应用，
+            这条探索之路从未停止。
           </p>
 
           <p>
-            On the frontend, I work primarily with React and TypeScript, crafting interfaces that are both
-            functional and visually refined. On the backend, I build APIs with Node.js and Express,
-            designing data models and authentication systems that keep things secure and performant.
+            前端方面，我主要使用 React 和 TypeScript，打造既实用又精致的界面。
+            后端方面，我用 Node.js 和 Express 构建 API，设计数据模型和认证系统，
+            确保安全性与性能兼备。
           </p>
 
           <p>
-            What excites me most is the graphics side — WebGL, shaders, and real-time rendering.
-            I believe the web is the most accessible creative medium, and I want to push its boundaries.
+            最让我兴奋的是图形领域 — WebGL、着色器、实时渲染。
+            我相信 Web 是最触手可及的创作媒介，我想推动它的边界。
           </p>
 
           <p>
-            When I'm not coding, you'll find me exploring computer graphics papers, contributing
-            to open-source, or writing about what I've learned.
+            不写代码的时候，我会研读图形学论文、参与开源项目，
+            或者把学到的东西写成博客分享出来。
           </p>
         </div>
 
         <div className="pt-6">
-          <h2 className="text-lg font-semibold text-text-primary mb-3">Contact</h2>
+          <h2 className="text-lg font-semibold text-text-primary mb-3">联系方式</h2>
           <p className="text-text-secondary">
-            Feel free to reach out at{' '}
+            欢迎通过邮件联系{' '}
             <a href="mailto:leon@example.com" className="text-accent hover:underline">
               leon@example.com
             </a>

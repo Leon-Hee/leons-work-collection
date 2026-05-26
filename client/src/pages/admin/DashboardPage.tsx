@@ -15,17 +15,17 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-text-primary mb-6">Dashboard</h1>
+      <h1 className="text-2xl font-bold text-text-primary mb-6">仪表盘</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Link to="/admin/posts">
           <Card>
-            <p className="text-sm text-text-muted mb-1">Total Posts</p>
+            <p className="text-sm text-text-muted mb-1">文章总数</p>
             <p className="text-3xl font-bold text-text-primary">{postCount}</p>
           </Card>
         </Link>
         <Link to="/admin/projects">
           <Card>
-            <p className="text-sm text-text-muted mb-1">Total Projects</p>
+            <p className="text-sm text-text-muted mb-1">项目总数</p>
             <p className="text-3xl font-bold text-text-primary">{projectCount}</p>
           </Card>
         </Link>
