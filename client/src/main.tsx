@@ -1,11 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import 'highlight.js/styles/github-dark.css'
 import './index.css'
 import App from './App'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// Diagnostic: verify JS loads
+const el = document.getElementById('root')!
+el.textContent = 'JS loaded, mounting React...'
+
+try {
+  createRoot(el).render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  )
+} catch (e: unknown) {
+  el.innerHTML = `<div style="color:red;padding:40px;">Fatal: ${String(e)}</div>`
+}
