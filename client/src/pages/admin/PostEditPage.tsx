@@ -6,9 +6,18 @@ import Button from '../../components/ui/Button'
 import Input from '../../components/ui/Input'
 import Spinner from '../../components/ui/Spinner'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || ''
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
-const supabase = createClient(supabaseUrl, supabaseKey)
+let supabase: ReturnType<typeof createClient> | null = null
+function getSupabase() {
+  if (!supabase) {
+    const url = import.meta.env.VITE_SUPABASE_URL
+    const key = import.meta.env.VITE_SUPABASE_ANON_KEY
+    if (!url || !key) {
+      throw new Error('Supabase credentials not configured')
+    }
+    supabase = createClient(url, key)
+  }
+  return supabase
+}
 
 export default function PostEditPage() {
   const { id } = useParams()
@@ -37,12 +46,12 @@ export default function PostEditPage() {
     const file = e.target.files?.[0]
     if (!file) return
     const path = `covers/${Date.now()}-${file.name}`
-    const { error } = await supabase.storage.from('images').upload(path, file)
+    const { error } = await getSupabase().storage.from('images').upload(path, file)
     if (error) {
       alert('Upload failed: ' + error.message)
       return
     }
-    const { data } = supabase.storage.from('images').getPublicUrl(path)
+    const { data } = getSupabase().storage.from('images').getPublicUrl(path)
     setCoverImage(data.publicUrl)
   }
 

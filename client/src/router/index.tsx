@@ -19,7 +19,6 @@ import ProjectEditPage from '../pages/admin/ProjectEditPage'
 export default function AppRouter() {
   return (
     <Routes>
-      {/* Public routes */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
@@ -29,11 +28,7 @@ export default function AppRouter() {
         <Route path="/blog/:id" element={<BlogDetailPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Route>
-
-      {/* Admin login (no auth) */}
       <Route path="/admin/login" element={<LoginPage />} />
-
-      {/* Admin routes (auth required) */}
       <Route element={<ProtectedRoute />}>
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<DashboardPage />} />
