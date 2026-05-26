@@ -9,7 +9,7 @@ export default function ProjectsPage() {
   const { projects, loading, error } = useProjects()
 
   return (
-    <div className="max-w-5xl mx-auto px-6 pt-24 pb-20">
+    <div className="max-w-5xl mx-auto px-6 pt-40 pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <h1 className="text-4xl font-bold text-text-primary mb-2">项目作品</h1>
         <p className="text-text-secondary mb-10">我构建和参与过的项目。</p>

@@ -22,7 +22,7 @@ export default function ProjectDetailPage() {
   if (!project) return <p className="text-text-muted text-center py-40">项目未找到。</p>
 
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-24 pb-20">
+    <div className="max-w-3xl mx-auto px-6 pt-40 pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <Link to="/projects" className="text-sm text-text-muted hover:text-text-secondary transition-colors">&larr; 返回项目</Link>
         <h1 className="text-4xl font-bold text-text-primary mt-4 mb-4">{project.title}</h1>

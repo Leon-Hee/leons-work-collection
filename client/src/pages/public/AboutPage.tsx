@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function AboutPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-24 pb-20">
+    <div className="max-w-3xl mx-auto px-6 pt-40 pb-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -11,7 +11,7 @@ export default function AboutPage() {
       >
         <h1 className="text-4xl font-bold text-text-primary mb-2">关于我</h1>
 
-        <div className="prose prose-invert max-w-none text-text-secondary leading-relaxed space-y-4">
+        <div className="prose prose-invert max-w-none text-text-secondary leading-loose space-y-4">
           <p>
             我是一名全栈开发者，对图形编程与 Web 技术的交汇点充满热情。
             从最初对屏幕像素如何绘制的好奇，到如今构建完整的 Web 应用，

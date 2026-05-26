@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-bg-primary/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-6 h-[72px] flex items-center justify-between">
         <Link to="/" className="text-lg font-semibold text-text-primary tracking-tight">
           Leon<span className="text-accent">.</span>
         </Link>
