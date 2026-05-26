@@ -13,8 +13,8 @@ const fadeUp = {
 
 export default function HomePage() {
   return (
-    <div className="max-w-4xl mx-auto px-6 pt-24 pb-20">
-      <motion.div variants={stagger} initial="initial" animate="animate" className="space-y-8">
+    <div className="max-w-4xl mx-auto px-6 pt-32 pb-20">
+      <motion.div variants={stagger} initial="initial" animate="animate" className="space-y-10">
         <motion.div variants={fadeUp}>
           <p className="text-sm text-accent font-mono tracking-wide">Hi, my name is</p>
         </motion.div>
@@ -42,7 +42,7 @@ export default function HomePage() {
           that sit at the intersection of engineering and design.
         </motion.p>
 
-        <motion.div variants={fadeUp} className="flex gap-4 pt-4">
+        <motion.div variants={fadeUp} className="flex gap-4 pt-6">
           <Link to="/projects">
             <Button>View My Work</Button>
           </Link>
